@@ -105,7 +105,7 @@ class TicketSerializer(serializers.ModelSerializer):
         fields = ("id", "row", "seat", "movie_session")
 
     def validate(self, data):
-        data = super(TicketSerializer).validate(data)
+        data = super().validate(data)
         ticket = Ticket(
             movie_session=data.get("movie_session"),
             row=data.get("row"),

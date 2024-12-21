@@ -63,7 +63,6 @@ class MovieApiTests(TestCase):
 
     def test_get_movies_with_title_filtering(self):
         movies = self.client.get(f"/api/cinema/movies/?title=ita")
-        print("Response data:", movies.data)
         self.assertEqual(len(movies.data), 1)
         movies = self.client.get(f"/api/cinema/movies/?title=ati")
         self.assertEqual(len(movies.data), 0)
